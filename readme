@@ -1,0 +1,34 @@
+			NETWORK-SPELLCHECKER - Produced by Bradley Juma 
+
+         /*-------------------------------------------------------------*\
+	 *                  	DESCRIPTION                              *
+	 \*-------------------------------------------------------------*/
+*****************************************************************************************
+	   My Spellchecker is a simple networked spell-checking application which is implemented over a local network using POSIX threads, sockets, and condition variables. The program will then act as a server for multiple client connections, and it distributes worker threads for each word entered into the simulation.
+	/*--------------------------------------------------------------*\
+	*                  	COMMANDS ARGUMENTS                       *
+ 	\*--------------------------------------------------------------*/
+  	*	client(port, words)  server(dictionary, port) 		*
+  	*****************************************************************
+	/*--------------------------------------------------------------*\
+ 	*                  	      USAGE                              *
+ 	\*--------------------------------------------------------------*/
+  	*  Key: ( -p ) port   ( -d ) dictionary 			*
+	*	Step 1. makefile - make: Use the makefile to compile    * 	******************************************************************************************
+	* 	Step 1A. create simpleServer (gcc simpleServer.c connectionQueue.c solvedSpellList.c logQueue.c spellQueue.c /open_listenfd.c -o simpleServer -lpthread) 
+  	*	Step 2. ./server -p 2019				*
+  	*	Step 3. gcc simpleClient.c -o simpleClient Compile	*
+	********Usage: ./simpleClient (port) (number_of_words)***********
+  	*	Step 4. ./simpleCLient 2019 5   			*
+\***Step 5. create multithread client (gcc complexClient.c -o complexClient -lpthread)***/                 ******************************************************************************************
+       /*    	QUIT: ESC(Escape key) to exit the program		*\
+******************************************************************************************
+	MyNetworkSpellChecker is also capable of taking in commands from a custom dictionary, and the file contains numerous commands which are then Deli-mated by a new line in order to be executed. You may run a batch command on my server by easily setting it as your argument as shown above. 
+	Words spelled correctly show [+] indicating the Word is spell correctly and [-] will indicate the words is incorrect onto stdout.
+	Once a successful connection has been established between the server, and client a GOAHEAD signal is initiated on the client side indicating a successful connection, and the server will hoot out a Connection Success on stdout as well.
+******************************************************************************************
+				 SpellChecker V.1.0
+******************************************************************************************
+
+        
+        
